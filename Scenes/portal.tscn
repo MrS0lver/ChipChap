@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp7moyr0vd76q"]
+
+[ext_resource type="Texture2D" uid="uid://d3bdprxjpe7s3" path="res://BGS/3 Objects/Pumpkin_portal1.png" id="1_qxlnb"]
+[ext_resource type="Script" path="res://Scenes/portal.gd" id="1_regtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pverp"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(0, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tdku"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(0, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2imv6"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(128, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0dg4"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(256, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txwqy"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(384, 0, 128, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tlnme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pverp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tdku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2imv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0dg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txwqy")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1i3"]
+size = Vector2(353.5, 159)
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_regtw")
+
+[node name="PortalOpen" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, -1)
+scale = Vector2(2.38818, 2.23438)
+sprite_frames = SubResource("SpriteFrames_tlnme")
+animation = &"Open"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(11, -7.52086)
+scale = Vector2(3.12938, 2.01194)
+polygon = PackedVector2Array(-31.2109, -3.74006, -18.9024, -23.0637, -0.43959, -27.4271, 10.9898, -24.9337, 25, -10, 25, 33, 20.6607, 58.5943, -22.8587, 59.2176, -32, 30)
+
+[node name="ANIMATIONPLAY" type="CollisionShape2D" parent="."]
+position = Vector2(-45, 29.5)
+shape = SubResource("RectangleShape2D_bk1i3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="CollisionPolygon2D" to="." method="_on_collision_polygon_2d_child_entered_tree"]
