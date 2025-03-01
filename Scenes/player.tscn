@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=3 uid="uid://ddjwbbt2vxfqd"]
+[gd_scene load_steps=175 format=3 uid="uid://ddjwbbt2vxfqd"]
 
 [ext_resource type="Texture2D" uid="uid://dxkgdvbhb37re" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Falling Down/0_Skeleton_Warrior_Falling Down_000.png" id="1_4suyl"]
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_5d8nf"]
@@ -144,17 +144,29 @@
 [ext_resource type="Texture2D" uid="uid://bisxcbwnd5nvo" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Walking/0_Skeleton_Warrior_Walking_023.png" id="78_q0uex"]
 [ext_resource type="Texture2D" uid="uid://1xnvrsuqs2a1" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_000.png" id="106_e7gh4"]
 [ext_resource type="Texture2D" uid="uid://dh2jqio0vuer" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_001.png" id="107_nxnky"]
+[ext_resource type="Texture2D" uid="uid://dhhy2yavbdhhc" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_000.png" id="107_vpkvi"]
 [ext_resource type="Texture2D" uid="uid://d0wrf6ibp7i23" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_002.png" id="108_1foac"]
+[ext_resource type="Texture2D" uid="uid://i4nl5765q0ip" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_001.png" id="108_rvskm"]
 [ext_resource type="Texture2D" uid="uid://bo8sg5gdbo0o1" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_003.png" id="109_advr6"]
+[ext_resource type="Texture2D" uid="uid://b6yf771f0l0y5" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_002.png" id="109_ct2m3"]
 [ext_resource type="Texture2D" uid="uid://bucybpf2puoyi" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_004.png" id="110_81ssb"]
+[ext_resource type="Texture2D" uid="uid://ml6bms7wjy8f" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_003.png" id="110_x704s"]
 [ext_resource type="Texture2D" uid="uid://da87wywit2bhg" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_005.png" id="111_7708e"]
+[ext_resource type="Texture2D" uid="uid://tgdsw3djw5yy" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_004.png" id="111_n5moq"]
+[ext_resource type="Texture2D" uid="uid://cfb3j0xyege3k" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_005.png" id="112_aqj5c"]
 [ext_resource type="Texture2D" uid="uid://0ry02fg8a6st" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_007.png" id="112_ticn8"]
+[ext_resource type="Texture2D" uid="uid://umnetyg5uji3" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_006.png" id="113_84yv6"]
 [ext_resource type="Texture2D" uid="uid://dmhldqeh4ly30" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_006.png" id="113_o65j8"]
 [ext_resource type="Texture2D" uid="uid://dmg8dfo3yld2" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_008.png" id="114_cu4n4"]
+[ext_resource type="Texture2D" uid="uid://vd8ape04wvw2" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_007.png" id="114_gv38n"]
+[ext_resource type="Texture2D" uid="uid://44v3tb6blu7p" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_008.png" id="115_qablk"]
 [ext_resource type="Texture2D" uid="uid://m4dxk5b2a2op" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_009.png" id="115_tpmw2"]
+[ext_resource type="Texture2D" uid="uid://laecp1d1r1lv" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_009.png" id="116_m5vd5"]
 [ext_resource type="Texture2D" uid="uid://cg5invhj8h71y" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_010.png" id="116_v37ru"]
 [ext_resource type="Texture2D" uid="uid://oc524sv71lsc" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_011.png" id="117_4u3xb"]
+[ext_resource type="Texture2D" uid="uid://cy58nnaueiqct" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_010.png" id="117_fanx2"]
 [ext_resource type="Texture2D" uid="uid://3mvnbwko6mdr" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_000.png" id="118_k88a1"]
+[ext_resource type="Texture2D" uid="uid://dfpi4trtwxta4" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Run Slashing/0_Skeleton_Warrior_Run Slashing_011.png" id="118_u8geq"]
 [ext_resource type="Texture2D" uid="uid://iuuk8vkdmkaq" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_001.png" id="119_hpu1n"]
 [ext_resource type="Texture2D" uid="uid://b142ci7j0eblu" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_002.png" id="120_1s1xs"]
 [ext_resource type="Texture2D" uid="uid://ou6fvnpmk8no" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_003.png" id="121_eqje0"]
@@ -566,6 +578,47 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("107_vpkvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_rvskm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_ct2m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_x704s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_n5moq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_aqj5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_84yv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_gv38n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_qablk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_m5vd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_fanx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_u8geq")
+}],
+"loop": false,
+"name": &"Run_Slashing",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("106_e7gh4")
 }, {
 "duration": 1.0,
@@ -758,7 +811,9 @@ script = ExtResource("1_5d8nf")
 position = Vector2(2.86102e-06, 14.4727)
 scale = Vector2(0.203655, 0.227839)
 sprite_frames = SubResource("SpriteFrames_bxunm")
-animation = &"Slide"
+animation = &"Run_Slashing"
+frame = 11
+frame_progress = 1.0
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)

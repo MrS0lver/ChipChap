@@ -224,6 +224,7 @@ func _process(delta: float) -> void:
 	# State machine tick
 	state.tick()
 	move_and_slide()
+	print(velocity.x)
 
 # ------------------------
 # Idle State
@@ -261,10 +262,17 @@ func _attack_state() -> Variant:
 # ------------------------
 func _slash_state() -> Variant:
 	if is_on_floor():
-		animation.play("Slash")
+		if velocity.x != 0:
+			animation.play("Run_Slashing")
+			print("RUNING")
+		else:
+			animation.play("Slash")
+			print("NORMAL SLASH")
 	else:
 		animation.play("Air_Slashing")
+		print("AIR SLASHING")
 	await animation.animation_finished
+	
 	return _idle_state
 
 # ------------------------
