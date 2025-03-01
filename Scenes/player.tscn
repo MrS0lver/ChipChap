@@ -624,7 +624,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("123_olln2")
 }],
-"loop": true,
+"loop": false,
 "name": &"Slide",
 "speed": 10.0
 }, {
@@ -758,9 +758,7 @@ script = ExtResource("1_5d8nf")
 position = Vector2(2.86102e-06, 14.4727)
 scale = Vector2(0.203655, 0.227839)
 sprite_frames = SubResource("SpriteFrames_bxunm")
-animation = &"Jump_Start"
-frame = 5
-frame_progress = 1.0
+animation = &"Slide"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
