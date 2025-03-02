@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ultwkiwkmskx"]
+[gd_scene load_steps=14 format=3 uid="uid://ultwkiwkmskx"]
 
 [ext_resource type="Texture2D" uid="uid://cqcmff1sisskd" path="res://BGS/Tileset.png" id="1_4rc3p"]
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_6r3h8"]
 [ext_resource type="PackedScene" uid="uid://dp7moyr0vd76q" path="res://Scenes/portal.tscn" id="1_ylf6y"]
 [ext_resource type="PackedScene" uid="uid://ddjwbbt2vxfqd" path="res://Scenes/player.tscn" id="2_fovkv"]
 [ext_resource type="Texture2D" uid="uid://i586wtth26rm" path="res://CITY/city 7/1.png" id="3_c3vsw"]
@@ -488,6 +489,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_igasr")
 
 [node name="LEVEL" type="Node2D"]
+script = ExtResource("1_6r3h8")
 
 [node name="Portal" parent="." instance=ExtResource("1_ylf6y")]
 position = Vector2(4465, 464)
@@ -562,6 +564,6 @@ texture = ExtResource("7_7ivwa")
 metadata/_edit_lock_ = true
 
 [node name="TRANS" type="Sprite2D" parent="."]
-position = Vector2(4470, 478.5)
-scale = Vector2(1.01021, 1.01562)
+position = Vector2(4471, 478)
+scale = Vector2(1, 0.989583)
 texture = ExtResource("10_bmv2n")

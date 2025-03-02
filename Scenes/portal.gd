@@ -3,7 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$"../TRANS".visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +15,16 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("SomeThing is Inside!")
 	$PortalOpen.play("Open") # Replace with function body.
+	await $PortalOpen.animation_finished
+	$"../TRANS".visible = true
 
 
-func _on_collision_polygon_2d_child_entered_tree(node: Node) -> void:
-	get_tree().quit() # Replace with function body.
+func _on_portal_door_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/transition.tscn")
+
+
+func _on_body_exited(body: Node2D) -> void:
+	$"../TRANS".visible = false
+	$PortalOpen.play("Close")
+	 # Replace with function body.

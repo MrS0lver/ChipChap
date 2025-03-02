@@ -1,7 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp7moyr0vd76q"]
+[gd_scene load_steps=14 format=3 uid="uid://dp7moyr0vd76q"]
 
 [ext_resource type="Texture2D" uid="uid://d3bdprxjpe7s3" path="res://BGS/3 Objects/Pumpkin_portal1.png" id="1_qxlnb"]
 [ext_resource type="Script" path="res://Scenes/portal.gd" id="1_regtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3wa2"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(384, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccc15"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(256, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrf0y"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(128, 0, 128, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueixt"]
+atlas = ExtResource("1_qxlnb")
+region = Rect2(0, 0, 128, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pverp"]
 atlas = ExtResource("1_qxlnb")
@@ -27,6 +43,23 @@ region = Rect2(384, 0, 128, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v3wa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccc15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrf0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueixt")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pverp")
 }, {
 "duration": 1.0,
@@ -47,27 +80,32 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1i3"]
-size = Vector2(353.5, 159)
+size = Vector2(341.75, 159)
 
 [node name="Portal" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_regtw")
 
 [node name="PortalOpen" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9.53674e-07, -1)
 scale = Vector2(2.38818, 2.23438)
 sprite_frames = SubResource("SpriteFrames_tlnme")
-animation = &"Open"
-frame = 4
+animation = &"Close"
+frame = 3
 frame_progress = 1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(11, -7.52086)
-scale = Vector2(3.12938, 2.01194)
-polygon = PackedVector2Array(-31.2109, -3.74006, -18.9024, -23.0637, -0.43959, -27.4271, 10.9898, -24.9337, 25, -10, 25, 33, 20.6607, 58.5943, -22.8587, 59.2176, -32, 30)
-
 [node name="ANIMATIONPLAY" type="CollisionShape2D" parent="."]
-position = Vector2(-45, 29.5)
+position = Vector2(-85.125, 29)
 shape = SubResource("RectangleShape2D_bk1i3")
 
+[node name="PortalDoor" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Teleport" type="CollisionPolygon2D" parent="PortalDoor"]
+polygon = PackedVector2Array(4, -57, 4, 3, -12, 102, 31, 99, 44, -50)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="child_entered_tree" from="CollisionPolygon2D" to="." method="_on_collision_polygon_2d_child_entered_tree"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="PortalDoor" to="." method="_on_portal_door_body_entered"]

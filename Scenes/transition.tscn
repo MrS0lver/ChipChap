@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsvohxqo8heur"]
+
+[ext_resource type="FontFile" uid="uid://crryr6k86xxkm" path="res://kenvector_future.ttf" id="1_pc1ty"]
+[ext_resource type="Script" path="res://Scenes/transition.gd" id="1_qfens"]
+
+[sub_resource type="Animation" id="Animation_twcus"]
+resource_name = "Fade_to_Black"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0235294), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0qmmf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqw06"]
+_data = {
+"Fade_to_Black": SubResource("Animation_twcus"),
+"RESET": SubResource("Animation_0qmmf")
+}
+
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_qfens")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_jqw06")
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="AnimationPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AnimationPlayer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pc1ty")
+theme_override_font_sizes/font_size = 35
+text = "Full Game Coming Soon ......"

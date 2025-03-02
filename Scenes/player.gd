@@ -166,6 +166,7 @@ var state: StateDelegate
 var speed: float = 400
 var jump_force: float = -400  # Upward force when jumping
 
+
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 var gravity_magnitude: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -187,6 +188,7 @@ func _ready() -> void:
 
 	# Set default state
 	state.set_default_state(_idle_state)
+	$BM.play()
 
 func _process(delta: float) -> void:
 	# Apply gravity
