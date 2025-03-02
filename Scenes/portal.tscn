@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp7moyr0vd76q"]
+[gd_scene load_steps=16 format=3 uid="uid://dp7moyr0vd76q"]
 
 [ext_resource type="Texture2D" uid="uid://d3bdprxjpe7s3" path="res://BGS/3 Objects/Pumpkin_portal1.png" id="1_qxlnb"]
 [ext_resource type="Script" path="res://Scenes/portal.gd" id="1_regtw"]
+[ext_resource type="AudioStream" uid="uid://ck5i5jt8pgx0k" path="res://Music/Mout_Open.mp3" id="3_mmji1"]
+[ext_resource type="AudioStream" uid="uid://4w74nx4wp85d" path="res://Music/Mout_Close.mp3" id="4_vwilt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3wa2"]
 atlas = ExtResource("1_qxlnb")
@@ -56,7 +58,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Close",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,11 +78,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"Open",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1i3"]
-size = Vector2(341.75, 159)
+size = Vector2(357.75, 159)
 
 [node name="Portal" type="Area2D"]
 collision_layer = 2
@@ -91,12 +93,10 @@ script = ExtResource("1_regtw")
 position = Vector2(-9.53674e-07, -1)
 scale = Vector2(2.38818, 2.23438)
 sprite_frames = SubResource("SpriteFrames_tlnme")
-animation = &"Close"
-frame = 3
-frame_progress = 1.0
+animation = &"Open"
 
 [node name="ANIMATIONPLAY" type="CollisionShape2D" parent="."]
-position = Vector2(-85.125, 29)
+position = Vector2(-93.125, 29)
 shape = SubResource("RectangleShape2D_bk1i3")
 
 [node name="PortalDoor" type="Area2D" parent="."]
@@ -105,6 +105,12 @@ collision_mask = 2
 
 [node name="Teleport" type="CollisionPolygon2D" parent="PortalDoor"]
 polygon = PackedVector2Array(4, -57, 4, 3, -12, 102, 31, 99, 44, -50)
+
+[node name="MoutOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mmji1")
+
+[node name="MoutClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vwilt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("SomeThing is Inside!")
 	$PortalOpen.play("Open") # Replace with function body.
+	$MoutOpen.play()
 	await $PortalOpen.animation_finished
 	$"../TRANS".visible = true
 
@@ -28,3 +29,5 @@ func _on_body_exited(body: Node2D) -> void:
 	$"../TRANS".visible = false
 	$PortalOpen.play("Close")
 	 # Replace with function body.
+	#await $PortalOpen.animation_finished
+	$MoutClose.play()

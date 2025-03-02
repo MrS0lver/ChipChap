@@ -821,5 +821,5 @@ shape = SubResource("CapsuleShape2D_cp174")
 
 [node name="BM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("173_5gdi4")
-volume_db = -5.333
+volume_db = -8.56
 autoplay = true
