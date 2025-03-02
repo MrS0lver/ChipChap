@@ -1,4 +1,4 @@
-# ChipChap
+# ChipChap 🎮
 
 A 2D action-packed fighting game with multiple levels!
 
@@ -42,6 +42,22 @@ ChipChap is still in the early stages of development. Here are the current featu
 ⏳ Enemy AI *(Coming soon)*  
 ⏳ Power-ups & abilities *(Planned)*  
 
+## 📸 ScreenShots 
+
+![Screenshot 2025-03-01 230221](https://github.com/user-attachments/assets/56f13e51-82e7-4aa2-a008-f596b0e2a09f)
+
+![Screenshot 2025-03-01 230240](https://github.com/user-attachments/assets/3951be04-c1a1-4443-9f3f-614c91f226fa)
+
+![Screenshot 2025-03-01 230203](https://github.com/user-attachments/assets/fc661ce4-918f-4c66-8993-5d37783c11a1)
+
+## 🎥 Video 
+
+
+
+https://github.com/user-attachments/assets/c414c965-5ef5-4340-b5d9-d62704ff8e73
+
+
+
 ## 📜 Contributing
 
 Want to contribute to ChipChap? Here’s how:
@@ -61,7 +77,7 @@ This project is open-source under the **MIT License**. Feel free to use, modify,
 
 For questions, suggestions, or just to say hi:
 
-- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
-- **GitHub Issues**: [Create an Issue](https://github.com/yourusername/ChipChap/issues)
+- **Twitter**: [@MrS0lver](https://x.com/Mrs0lver)
+- **itch.io**: [@Sud0ku](https://sud0ku.itch.io/)
 
 Let’s build something awesome together! 🎮🚀
