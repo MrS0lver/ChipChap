@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://b80u5tgpwv3m3"]
+[gd_scene load_steps=7 format=4 uid="uid://b80u5tgpwv3m3"]
 
 [ext_resource type="Texture2D" uid="uid://cqcmff1sisskd" path="res://BGS/Tileset.png" id="1_djunk"]
+[ext_resource type="PackedScene" uid="uid://dp7moyr0vd76q" path="res://Scenes/portal.tscn" id="2_074yg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ea72"]
 texture = ExtResource("1_djunk")
@@ -796,6 +797,10 @@ sources/0 = SubResource("TileSetAtlasSource_m7wwj")
 
 [node name="Level_2" type="Node2D"]
 
+[node name="Tree" type="ParallaxBackground" parent="."]
+
+[node name="TreeImg" type="ParallaxLayer" parent="Tree"]
+
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
@@ -805,3 +810,6 @@ tile_set = SubResource("TileSet_h4mxm")
 
 [node name="BG" type="TileMapLayer" parent="TileMap"]
 tile_set = SubResource("TileSet_iguwy")
+
+[node name="Portal" parent="." instance=ExtResource("2_074yg")]
+position = Vector2(147, 467)
