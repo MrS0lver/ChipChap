@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg2d7eprkkmva"]
+[gd_scene load_steps=6 format=3 uid="uid://bg2d7eprkkmva"]
 
 [ext_resource type="Texture2D" uid="uid://bhwr0v0f6w80g" path="res://BGS/3 Objects/Buttons/Backward_BTN.png" id="1_kn3f1"]
 [ext_resource type="Texture2D" uid="uid://b2dce28tjneoh" path="res://BGS/3 Objects/Buttons/Forward_BTN.png" id="2_r2mdw"]
 [ext_resource type="Texture2D" uid="uid://c5viu8f0hotsp" path="res://BGS/3 Objects/Buttons/Jump.png" id="3_yfpny"]
+[ext_resource type="Texture2D" uid="uid://btqwvn40mea26" path="res://BGS/3 Objects/Buttons/Menu_BTN.png" id="4_5cs7i"]
+[ext_resource type="Texture2D" uid="uid://cab1bfkma3mq1" path="res://BGS/3 Objects/Buttons/Slide_Button.png" id="4_w76ou"]
 
 [node name="Buttons" type="CanvasLayer"]
 
@@ -19,7 +21,19 @@ texture_normal = ExtResource("2_r2mdw")
 action = "walk_right"
 
 [node name="Jump" type="TouchScreenButton" parent="."]
-position = Vector2(903, 482)
-scale = Vector2(0.719047, 0.639811)
+position = Vector2(984, 400)
+scale = Vector2(0.523809, 0.483413)
 texture_normal = ExtResource("3_yfpny")
 action = "Jump"
+
+[node name="Slide" type="TouchScreenButton" parent="."]
+position = Vector2(1016, 512)
+scale = Vector2(0.485714, 0.493985)
+texture_normal = ExtResource("4_w76ou")
+action = "Slide"
+
+[node name="Menu" type="TouchScreenButton" parent="."]
+position = Vector2(1064, 24)
+scale = Vector2(0.274014, 0.244021)
+texture_normal = ExtResource("4_5cs7i")
+action = "Menu"

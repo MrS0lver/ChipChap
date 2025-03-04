@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2i1ydwdvb1ti"]
+
+[ext_resource type="Texture2D" uid="uid://b507al2gi4j6m" path="res://BGS/3 Objects/Screenshot_2025-03-01_215118-removebg-preview.png" id="1_s6di1"]
+
+[node name="TRANS" type="Sprite2D"]
+position = Vector2(4468.5, 478)
+scale = Vector2(1.02551, 0.989583)
+texture = ExtResource("1_s6di1")

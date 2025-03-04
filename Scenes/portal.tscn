@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dp7moyr0vd76q"]
 
 [ext_resource type="Texture2D" uid="uid://d3bdprxjpe7s3" path="res://BGS/3 Objects/Pumpkin_portal1.png" id="1_qxlnb"]
-[ext_resource type="Script" path="res://Scenes/portal.gd" id="1_regtw"]
+[ext_resource type="Script" uid="uid://cbmkof78828sa" path="res://Scenes/portal.gd" id="1_regtw"]
 [ext_resource type="AudioStream" uid="uid://ck5i5jt8pgx0k" path="res://Music/Mout_Open.mp3" id="3_mmji1"]
 [ext_resource type="AudioStream" uid="uid://4w74nx4wp85d" path="res://Music/Mout_Close.mp3" id="4_vwilt"]
 

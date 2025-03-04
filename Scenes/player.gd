@@ -169,7 +169,6 @@ var jump_force: float = -400  # Upward force when jumping
 
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 var gravity_magnitude: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var spawn_pos: Vector2  # Fixed spelling from 'spown_pos' to 'spawn_pos'
 
 func _ready() -> void:
@@ -196,7 +195,7 @@ func _process(delta: float) -> void:
 		velocity.y += gravity_vector.y * gravity_magnitude * delta
 	
 	# Attack input
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("Slide"):
 		state.set_state(_attack_state)
 	
 	# Movement
@@ -218,7 +217,10 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("Jump") and is_on_floor():
 		state.set_state(_jump_start)
 		velocity.y = jump_force  # Apply jump force
-
+	#if Input.is_action_just_pressed("Menu"):
+		#menu.instantiate()
+	if Input.is_action_just_pressed("Menu"):
+		pass
 	# Reset position if falling out of bounds
 	if position.y >= 640:
 		position = spawn_pos

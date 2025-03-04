@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsvohxqo8heur"]
 
 [ext_resource type="FontFile" uid="uid://crryr6k86xxkm" path="res://kenvector_future.ttf" id="1_pc1ty"]
-[ext_resource type="Script" path="res://Scenes/transition.gd" id="1_qfens"]
+[ext_resource type="Script" uid="uid://djb4agi3wfwbo" path="res://Scenes/transition.gd" id="1_qfens"]
 
 [sub_resource type="Animation" id="Animation_twcus"]
 resource_name = "Fade_to_Black"
@@ -36,8 +36,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jqw06"]
 _data = {
-"Fade_to_Black": SubResource("Animation_twcus"),
-"RESET": SubResource("Animation_0qmmf")
+&"Fade_to_Black": SubResource("Animation_twcus"),
+&"RESET": SubResource("Animation_0qmmf")
 }
 
 [node name="Transition" type="CanvasLayer"]
@@ -55,7 +55,7 @@ color = Color(0, 0, 0, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
 libraries = {
-"": SubResource("AnimationLibrary_jqw06")
+&"": SubResource("AnimationLibrary_jqw06")
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="AnimationPlayer"]
