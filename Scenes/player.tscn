@@ -802,8 +802,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmm01"]
-radius = 24.0
-height = 96.0
+radius = 26.0
+height = 100.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -816,7 +816,7 @@ animation = &"Idle"
 offset = Vector2(0, -292)
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -48)
+position = Vector2(0, -51)
 shape = SubResource("CapsuleShape2D_gmm01")
 
 [node name="BM" type="AudioStreamPlayer2D" parent="."]
