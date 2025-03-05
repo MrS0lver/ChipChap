@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_portal_door_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
-	get_tree().change_scene_to_file("res://Scenes/transition.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
 
 
 func _on_body_exited(body: Node2D) -> void:
