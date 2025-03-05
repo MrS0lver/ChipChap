@@ -801,27 +801,26 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cp174"]
-radius = 30.0
-height = 114.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmm01"]
+radius = 24.0
+height = 96.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_5d8nf")
 
-[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.86102e-06, 14.4727)
-scale = Vector2(0.203655, 0.227839)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_bxunm")
 animation = &"Idle"
+offset = Vector2(0, -292)
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 25)
-shape = SubResource("CapsuleShape2D_cp174")
+position = Vector2(0, -48)
+shape = SubResource("CapsuleShape2D_gmm01")
 
 [node name="BM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("173_5gdi4")
-volume_db = -8.56
-autoplay = true
+volume_db = -80.0
 
 [node name="Menu" type="Node2D" parent="."]
