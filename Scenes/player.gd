@@ -111,60 +111,18 @@
 	#return null
 		#
 	#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# NOTE: PLEASE DELETE THIS COMMENTED CODE /(@_@)\
 
 extends CharacterBody2D
 
-@onready var animation: AnimatedSprite2D = $PlayerAnimation
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
 ## Create global State value
 var state: StateDelegate
 
 var speed: float = 400
 var jump_force: float = -400  # Upward force when jumping
+var last_platform_velocity = Vector2.ZERO
 
 
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
@@ -187,13 +145,13 @@ func _ready() -> void:
 
 	# Set default state
 	state.set_default_state(_idle_state)
-	$BM.play()
 
-func _process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
-		velocity.y += gravity_vector.y * gravity_magnitude * delta
-	
+		velocity += (get_gravity() * delta)
+	 
 	# Attack input
 	if Input.is_action_just_pressed("Slide"):
 		state.set_state(_attack_state)
@@ -202,32 +160,37 @@ func _process(delta: float) -> void:
 	var direction := Input.get_axis("walk_left", "walk_right")
 	if direction:
 		velocity.x = direction * speed
-	else:
+	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
+
 	# Flip animation based on direction
 	if direction != 0:
 		animation.flip_h = direction < 0  # True if moving left, False if moving right
+
 	
 	# Slash attack input
 	if Input.is_action_pressed("Slash"):
 		state.set_state(_slash_state)
 	
 	# Jump input
-	elif Input.is_action_just_pressed("Jump") and is_on_floor():
+	if  Input.is_action_just_pressed("Jump") and is_on_floor():
 		state.set_state(_jump_start)
 		velocity.y = jump_force  # Apply jump force
+		velocity.x = last_platform_velocity.x
 	#if Input.is_action_just_pressed("Menu"):
 		#menu.instantiate()
 	if Input.is_action_just_pressed("Menu"):
 		pass
+	
 	# Reset position if falling out of bounds
 	if position.y >= 640:
 		position = spawn_pos
 
+	move_and_slide()
 	# State machine tick
 	state.tick()
-	move_and_slide()
+	last_platform_velocity = get_platform_velocity()
 
 # ------------------------
 # Idle State
