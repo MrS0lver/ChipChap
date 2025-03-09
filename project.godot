@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ChipChap"
-run/main_scene="uid://7b2bxd7twu7o"
+run/main_scene="uid://li2vtc4jfpf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
