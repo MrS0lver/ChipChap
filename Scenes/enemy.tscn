@@ -1,0 +1,166 @@
+[gd_scene load_steps=35 format=3 uid="uid://cjpgkuixhku15"]
+
+[ext_resource type="Texture2D" uid="uid://bvsupy5jypoff" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_000.png" id="1_bx1xr"]
+[ext_resource type="Script" uid="uid://ggnbnrsmqgt5" path="res://Scenes/enemy.gd" id="1_n85mp"]
+[ext_resource type="Texture2D" uid="uid://bsrjoj3c0dm88" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_001.png" id="2_n85mp"]
+[ext_resource type="Texture2D" uid="uid://3gpgcjph70g7" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_002.png" id="3_nxecp"]
+[ext_resource type="Texture2D" uid="uid://c1jvbdb1kw0rg" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_003.png" id="4_6jaer"]
+[ext_resource type="Texture2D" uid="uid://dphrlgua5r8nn" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_004.png" id="5_ve8xs"]
+[ext_resource type="Texture2D" uid="uid://5i1xynngojxf" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_005.png" id="6_q0iv8"]
+[ext_resource type="Texture2D" uid="uid://c8oaeeex78q13" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_006.png" id="7_c1gwg"]
+[ext_resource type="Texture2D" uid="uid://beyfkeyv32trs" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_007.png" id="8_3mxp7"]
+[ext_resource type="Texture2D" uid="uid://cricf13fjb6wt" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_008.png" id="9_5a56t"]
+[ext_resource type="Texture2D" uid="uid://dpgbhqjmw11oy" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_009.png" id="10_a6sir"]
+[ext_resource type="Texture2D" uid="uid://cidytjxsq3gha" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_010.png" id="11_8ej4m"]
+[ext_resource type="Texture2D" uid="uid://ceb7jolmx8ae6" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_011.png" id="12_bwheg"]
+[ext_resource type="Texture2D" uid="uid://birjud7lu0pl5" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_012.png" id="13_iol0x"]
+[ext_resource type="Texture2D" uid="uid://bnxxcf1fuppl6" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_014.png" id="14_ofqcr"]
+[ext_resource type="Texture2D" uid="uid://c3sldxf7p3j8l" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_013.png" id="15_nus6a"]
+[ext_resource type="Texture2D" uid="uid://1rndmpu0imy5" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_015.png" id="16_imgxb"]
+[ext_resource type="Texture2D" uid="uid://bacvngrxn2ffl" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_016.png" id="17_pyrvc"]
+[ext_resource type="Texture2D" uid="uid://dw06k0ek6ac2l" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_017.png" id="18_pja2t"]
+[ext_resource type="Texture2D" uid="uid://6bx8ebfcs2sc" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_000.png" id="19_jx5vc"]
+[ext_resource type="Texture2D" uid="uid://dbgug74qjwkug" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_001.png" id="20_7vco5"]
+[ext_resource type="Texture2D" uid="uid://cujhu3rq21hrw" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_002.png" id="21_7xmqa"]
+[ext_resource type="Texture2D" uid="uid://ctncajeprkfka" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_003.png" id="22_8w0mm"]
+[ext_resource type="Texture2D" uid="uid://dd7pxjogmk0s4" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_004.png" id="23_ebugx"]
+[ext_resource type="Texture2D" uid="uid://bpy0x3ebfsgen" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_005.png" id="24_mpt27"]
+[ext_resource type="Texture2D" uid="uid://ce2u4vb8mme1r" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_007.png" id="25_0dyvk"]
+[ext_resource type="Texture2D" uid="uid://d200yo7ug08fa" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_006.png" id="26_anrbk"]
+[ext_resource type="Texture2D" uid="uid://bfxbyexegh6du" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_008.png" id="27_rcolj"]
+[ext_resource type="Texture2D" uid="uid://ce1xflpjd0eli" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_009.png" id="28_mhcg5"]
+[ext_resource type="Texture2D" uid="uid://ckysblgw86mka" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_010.png" id="29_twqvw"]
+[ext_resource type="Texture2D" uid="uid://b5jc0o5ubmh3y" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_011.png" id="30_1twfy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhwq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bx1xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n85mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nxecp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6jaer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ve8xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q0iv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c1gwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3mxp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5a56t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a6sir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8ej4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bwheg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iol0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ofqcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nus6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_imgxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pyrvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pja2t")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_jx5vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7vco5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7xmqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8w0mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ebugx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mpt27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0dyvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_anrbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rcolj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mhcg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_twqvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1twfy")
+}],
+"loop": false,
+"name": &"Slashing",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx1xr"]
+radius = 24.0
+height = 108.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv6oi"]
+size = Vector2(259.813, 90.625)
+
+[node name="Enemy" type="AnimatableBody2D"]
+script = ExtResource("1_n85mp")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.215, 0.212639)
+sprite_frames = SubResource("SpriteFrames_qhwq3")
+animation = &"Idle"
+frame_progress = 0.257949
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 9)
+shape = SubResource("CapsuleShape2D_bx1xr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-202.094, 59.3125)
+shape = SubResource("RectangleShape2D_fv6oi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

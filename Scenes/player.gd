@@ -69,7 +69,7 @@ func _physics_process(delta: float) -> void:
 		pass
 	
 	# Reset position if falling out of bounds
-	if position.y >= 640:
+	if position.y >= 670:
 		position = spawn_pos
 
 	move_and_slide()
