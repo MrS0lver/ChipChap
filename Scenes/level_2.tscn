@@ -754,7 +754,7 @@ speed_scale = 0.2
 [node name="PLatFormer_2" type="Node2D" parent="."]
 
 [node name="PlatForm2" parent="PLatFormer_2" instance=ExtResource("18_fhuy1")]
-position = Vector2(3508, 431)
+position = Vector2(3500, 386)
 
 [node name="Path2D" type="Path2D" parent="PLatFormer_2"]
 curve = SubResource("Curve2D_i6dbo")
@@ -765,7 +765,6 @@ rotates = false
 script = ExtResource("18_i6dbo")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PLatFormer_2/Path2D/PathFollow2D"]
-position = Vector2(8, 45)
 remote_path = NodePath("../../../PlatForm2")
 
 [node name="UPDOWN" type="Node2D" parent="."]
