@@ -28,3 +28,4 @@ func _on_body_exited(body: Node2D) -> void:
 	 # Replace with function body.
 	#await $PortalOpen.animation_finished
 	$MoutClose.play()
+	
