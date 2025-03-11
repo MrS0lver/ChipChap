@@ -172,7 +172,7 @@
 [ext_resource type="Texture2D" uid="uid://ou6fvnpmk8no" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_003.png" id="121_eqje0"]
 [ext_resource type="Texture2D" uid="uid://mmy8oahcdgnx" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_004.png" id="122_0jaqt"]
 [ext_resource type="Texture2D" uid="uid://wyp13ywryjpg" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_005.png" id="123_olln2"]
-[ext_resource type="AudioStream" uid="uid://ck2qj78apdq02" path="res://Music/Bm.mp3" id="173_5gdi4"]
+[ext_resource type="PackedScene" uid="uid://dog1kdf4u4xgv" path="res://Scenes/bm.tscn" id="173_gmm01"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxunm"]
 animations = [{
@@ -817,11 +817,9 @@ animation = &"Idle"
 offset = Vector2(0, -292)
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -49)
+position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_gmm01")
 
-[node name="BM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("173_5gdi4")
-volume_db = -80.0
-
 [node name="Menu" type="Node2D" parent="."]
+
+[node name="BM" parent="." instance=ExtResource("173_gmm01")]

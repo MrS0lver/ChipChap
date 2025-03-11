@@ -30,7 +30,8 @@ func _ready() -> void:
 
 	# Set default state
 	state.set_default_state(_idle_state)
-
+	BackGroundMusic.play()
+	
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity
@@ -40,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	# Attack input
 	if Input.is_action_just_pressed("Slide"):
 		state.set_state(_attack_state)
+		#$Shape.position = Vector2(0,22)
 	
 	# Movement
 	var direction := Input.get_axis("walk_left", "walk_right")
@@ -52,7 +54,6 @@ func _physics_process(delta: float) -> void:
 	# Flip animation based on direction
 	if direction != 0:
 		animation.flip_h = direction < 0  # True if moving left, False if moving right
-
 	
 	# Slash attack input
 	if Input.is_action_pressed("Slash"):
@@ -84,6 +85,8 @@ func _idle_enter_state() -> void:
 	animation.play("Idle")
 
 func _idle_state() -> Variant:
+	$Shape.rotation_degrees = 0 
+	$Shape.position = Vector2(0,-48)
 	if !velocity.is_zero_approx():
 		return _walk_state
 	return null
@@ -104,9 +107,16 @@ func _walk_state() -> Variant:
 # Attack State
 # ------------------------
 func _attack_state() -> Variant:
+	
 	animation.play("Slide")
+	$Shape.rotation_degrees = -90
+	if animation.flip_h == true:
+		$Shape.position = Vector2(26,-26)
+	else:
+		$Shape.position = Vector2(-26,-26)
 	await animation.animation_finished
 	return _idle_state
+	
 
 # ------------------------
 # Slash Attack State
@@ -127,6 +137,8 @@ func _slash_state() -> Variant:
 # Jump State
 # ------------------------
 func _jump_enter():
+	$Shape.rotation_degrees = 0 
+	$Shape.position = Vector2(0,-48)
 	animation.play("Jump_Start")
 	await animation.animation_finished
 	animation.play("Jump_Loop")

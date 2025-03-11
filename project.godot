@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ChipChap"
-run/main_scene="uid://ultwkiwkmskx"
+run/main_scene="uid://7b2bxd7twu7o"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackGroundMusic="*res://Scenes/BackGround Music.tscn"
 
 [display]
 
