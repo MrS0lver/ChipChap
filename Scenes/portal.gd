@@ -18,7 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 	$"../TRANS".visible = true
 
 func _on_portal_door_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	# Replace with function body.
+	$MAP_Changed.play()
 	get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp7moyr0vd76q"]
+[gd_scene load_steps=17 format=3 uid="uid://dp7moyr0vd76q"]
 
 [ext_resource type="Texture2D" uid="uid://d3bdprxjpe7s3" path="res://BGS/3 Objects/Pumpkin_portal1.png" id="1_qxlnb"]
 [ext_resource type="Script" uid="uid://cbmkof78828sa" path="res://Scenes/portal.gd" id="1_regtw"]
 [ext_resource type="AudioStream" uid="uid://ck5i5jt8pgx0k" path="res://Music/Mout_Open.mp3" id="3_mmji1"]
 [ext_resource type="AudioStream" uid="uid://4w74nx4wp85d" path="res://Music/Mout_Close.mp3" id="4_vwilt"]
+[ext_resource type="PackedScene" uid="uid://crym8vxh8dycq" path="res://Scenes/map_changed.tscn" id="5_cqy4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3wa2"]
 atlas = ExtResource("1_qxlnb")
@@ -111,6 +112,8 @@ stream = ExtResource("3_mmji1")
 
 [node name="MoutClose" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vwilt")
+
+[node name="MAP_Changed" parent="." instance=ExtResource("5_cqy4h")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
