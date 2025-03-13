@@ -30,7 +30,6 @@ func _ready() -> void:
 
 	# Set default state
 	state.set_default_state(_idle_state)
-	BackGroundMusic.play()
 	
 
 func _physics_process(delta: float) -> void:

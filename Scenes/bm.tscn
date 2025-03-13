@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dog1kdf4u4xgv"]
-
-[ext_resource type="AudioStream" uid="uid://booumu2248xn5" path="res://Music/game-music-loop-7-145285.mp3" id="1_eftuy"]
-
-[node name="BM" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_eftuy")
-volume_db = -0.17
-autoplay = true
-parameters/looping = true
