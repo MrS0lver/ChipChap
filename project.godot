@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-BackGroundMusic="*res://Scenes/BackGround Music.tscn"
+MusicMenager="*res://autoloads/music_menager.tscn"
 
 [display]
 
@@ -26,6 +26,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://autoloads/": "blue",
 "res://testing/": "gray"
 }
 
