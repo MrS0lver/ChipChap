@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://cjpgkuixhku15"]
+[gd_scene load_steps=41 format=3 uid="uid://cjpgkuixhku15"]
 
 [ext_resource type="Texture2D" uid="uid://bvsupy5jypoff" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_000.png" id="1_bx1xr"]
 [ext_resource type="Script" uid="uid://ggnbnrsmqgt5" path="res://Scenes/enemy.gd" id="1_n85mp"]
+[ext_resource type="Script" uid="uid://diot262ie7ush" path="res://Commponents/health_commponent.gd" id="2_6jaer"]
 [ext_resource type="Texture2D" uid="uid://bsrjoj3c0dm88" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_001.png" id="2_n85mp"]
 [ext_resource type="Texture2D" uid="uid://3gpgcjph70g7" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_002.png" id="3_nxecp"]
 [ext_resource type="Texture2D" uid="uid://c1jvbdb1kw0rg" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_003.png" id="4_6jaer"]
@@ -31,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://ce1xflpjd0eli" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_009.png" id="28_mhcg5"]
 [ext_resource type="Texture2D" uid="uid://ckysblgw86mka" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_010.png" id="29_twqvw"]
 [ext_resource type="Texture2D" uid="uid://b5jc0o5ubmh3y" path="res://SKELLATON/Skeleton_Warrior_2/PNG/PNG Sequences/Slashing/0_Skeleton_Warrior_Slashing_011.png" id="30_1twfy"]
+[ext_resource type="Script" uid="uid://d3kn40314fw3r" path="res://Commponents/hurtbox2D.gd" id="33_ve8xs"]
+[ext_resource type="Script" uid="uid://cov0yppfp6vgb" path="res://Commponents/hitbox.gd" id="34_q0iv8"]
+[ext_resource type="Script" uid="uid://d0pwx4ohgjew0" path="res://Resources/attack_info.gd" id="35_c1gwg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhwq3"]
 animations = [{
@@ -139,28 +143,77 @@ animations = [{
 radius = 24.0
 height = 108.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv6oi"]
-size = Vector2(259.813, 90.625)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0iv8"]
+radius = 27.0
+height = 104.0
 
-[node name="Enemy" type="AnimatableBody2D"]
+[sub_resource type="Resource" id="Resource_3mxp7"]
+script = ExtResource("35_c1gwg")
+demage = 10
+attack_type = 0
+metadata/_custom_type_script = "uid://d0pwx4ohgjew0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a56t"]
+size = Vector2(62, 65)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_n85mp")
+
+[node name="HealthCommponent" type="Node" parent="."]
+script = ExtResource("2_6jaer")
+max_hp = 10
+metadata/_custom_type_script = "uid://diot262ie7ush"
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.19209e-07)
 scale = Vector2(0.215, 0.212639)
 sprite_frames = SubResource("SpriteFrames_qhwq3")
-animation = &"Idle"
-frame_progress = 0.257949
+animation = &"Slashing"
+frame = 11
+frame_progress = 1.0
+offset = Vector2(0, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 9)
+position = Vector2(0, -53)
 shape = SubResource("CapsuleShape2D_bx1xr")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox2D" type="Area2D" parent="."]
+position = Vector2(0, -53)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("33_ve8xs")
+eneble_iframes = true
+metadata/_custom_type_script = "uid://d3kn40314fw3r"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-202.094, 59.3125)
-shape = SubResource("RectangleShape2D_fv6oi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]
+shape = SubResource("CapsuleShape2D_q0iv8")
+debug_color = Color(0.842702, 0.320601, 0.548402, 0.419608)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Hitbox2D" type="Area2D" parent="."]
+position = Vector2(0, -53)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("34_q0iv8")
+attack_info = SubResource("Resource_3mxp7")
+metadata/_custom_type_script = "uid://cov0yppfp6vgb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
+position = Vector2(63, 17.5)
+shape = SubResource("RectangleShape2D_5a56t")
+disabled = true
+debug_color = Color(0.990371, 0, 0.279162, 0.42)
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+position = Vector2(0, -53)
+target_position = Vector2(100, 0)
+collision_mask = 2
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -53)
+target_position = Vector2(-100, 0)
+collision_mask = 2
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
