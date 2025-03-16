@@ -1,9 +1,10 @@
-[gd_scene load_steps=175 format=3 uid="uid://ddjwbbt2vxfqd"]
+[gd_scene load_steps=182 format=3 uid="uid://ddjwbbt2vxfqd"]
 
 [ext_resource type="Texture2D" uid="uid://dxkgdvbhb37re" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Falling Down/0_Skeleton_Warrior_Falling Down_000.png" id="1_4suyl"]
 [ext_resource type="Script" uid="uid://d017mx5f5hj2u" path="res://Scenes/player.gd" id="1_5d8nf"]
 [ext_resource type="Texture2D" uid="uid://c4kr8nt27w0br" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_000.png" id="1_oxn3l"]
 [ext_resource type="Texture2D" uid="uid://cbcjy0mm1dhex" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing in The Air/0_Skeleton_Warrior_Slashing in The Air_000.png" id="1_rlne7"]
+[ext_resource type="Script" uid="uid://diot262ie7ush" path="res://Commponents/health_commponent.gd" id="2_gmm01"]
 [ext_resource type="Texture2D" uid="uid://dg2h0p1o1i3ei" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Slashing in The Air/0_Skeleton_Warrior_Slashing in The Air_001.png" id="2_kqns0"]
 [ext_resource type="Texture2D" uid="uid://c6g1ybu3ksynn" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Falling Down/0_Skeleton_Warrior_Falling Down_001.png" id="2_m3423"]
 [ext_resource type="Texture2D" uid="uid://b1tw4ohn21vfi" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Idle/0_Skeleton_Warrior_Idle_001.png" id="2_w7rjp"]
@@ -172,6 +173,9 @@
 [ext_resource type="Texture2D" uid="uid://ou6fvnpmk8no" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_003.png" id="121_eqje0"]
 [ext_resource type="Texture2D" uid="uid://mmy8oahcdgnx" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_004.png" id="122_0jaqt"]
 [ext_resource type="Texture2D" uid="uid://wyp13ywryjpg" path="res://SKELLATON/Skeleton_Warrior_1/PNG/PNG Sequences/Sliding/0_Skeleton_Warrior_Sliding_005.png" id="123_olln2"]
+[ext_resource type="Script" uid="uid://d3kn40314fw3r" path="res://Commponents/hurtbox2D.gd" id="174_ott2s"]
+[ext_resource type="Script" uid="uid://cov0yppfp6vgb" path="res://Commponents/hitbox.gd" id="175_ylvu8"]
+[ext_resource type="Script" uid="uid://d0pwx4ohgjew0" path="res://Resources/attack_info.gd" id="176_lustd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxunm"]
 animations = [{
@@ -804,9 +808,29 @@ animations = [{
 radius = 26.0
 height = 94.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftehy"]
+radius = 16.0
+height = 96.0
+
+[sub_resource type="Resource" id="Resource_gbwas"]
+script = ExtResource("176_lustd")
+demage = 1
+attack_type = 0
+metadata/_custom_type_script = "uid://d0pwx4ohgjew0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkmv"]
+size = Vector2(82, 58)
+
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_5d8nf")
+
+[node name="HealthCommponent" type="Node" parent="."]
+script = ExtResource("2_gmm01")
+max_hp = 100
+debug = true
+metadata/_custom_type_script = "uid://diot262ie7ush"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
@@ -820,3 +844,27 @@ position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_gmm01")
 
 [node name="Menu" type="Node2D" parent="."]
+
+[node name="Hurtbox2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("174_ott2s")
+metadata/_custom_type_script = "uid://d3kn40314fw3r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]
+position = Vector2(0, -48)
+shape = SubResource("CapsuleShape2D_ftehy")
+debug_color = Color(0.970394, 0, 0.455014, 0.42)
+
+[node name="Hitbox2D" type="Area2D" parent="."]
+position = Vector2(0, -48)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("175_ylvu8")
+attack_info = SubResource("Resource_gbwas")
+damage_repeat = true
+metadata/_custom_type_script = "uid://cov0yppfp6vgb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
+position = Vector2(79, 19)
+shape = SubResource("RectangleShape2D_ljkmv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ultwkiwkmskx"]
+[gd_scene load_steps=30 format=3 uid="uid://ultwkiwkmskx"]
 
 [ext_resource type="Texture2D" uid="uid://cqcmff1sisskd" path="res://BGS/Tileset.png" id="1_4rc3p"]
 [ext_resource type="Script" uid="uid://bhhmxiaeysf00" path="res://Scenes/level.gd" id="1_6r3h8"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://crryr6k86xxkm" path="res://kenvector_future.ttf" id="13_72ybv"]
 [ext_resource type="Texture2D" uid="uid://b1acob3w3r823" path="res://BGS/3 Objects/Other/Tree4.png" id="13_q4brk"]
 [ext_resource type="PackedScene" uid="uid://b2i1ydwdvb1ti" path="res://Scenes/trans.tscn" id="19_yxm7g"]
+[ext_resource type="PackedScene" uid="uid://cjpgkuixhku15" path="res://Scenes/enemy.tscn" id="21_0cmrb"]
 
 [sub_resource type="Theme" id="Theme_b6jci"]
 default_font = ExtResource("13_72ybv")
@@ -542,17 +543,16 @@ anchor_left = 0.132
 anchor_top = 0.219
 anchor_right = 0.868
 anchor_bottom = 0.565
-offset_left = -70.556
-offset_top = -64.441
-offset_right = -60.444
-offset_bottom = -57.535
+offset_left = -68.6109
+offset_top = -73.0378
+offset_right = -58.4989
+offset_bottom = -66.1318
 
 [node name="Label" type="Label" parent="Board/CenterIt"]
 layout_mode = 2
 theme = SubResource("Theme_b6jci")
 theme_override_font_sizes/font_size = 16
-text = "Portal 
-"
+text = "Portal "
 
 [node name="Sprite2D" type="Sprite2D" parent="Board"]
 position = Vector2(-8.15162, 56.9096)
@@ -640,3 +640,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Buttons" parent="Control" instance=ExtResource("12_1ossp")]
+visible = false
+
+[node name="Enemy" parent="." instance=ExtResource("21_0cmrb")]
+position = Vector2(1067, 573)
