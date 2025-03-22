@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://bs7ymakoih3ix"]
+[gd_scene load_steps=68 format=4 uid="uid://bs7ymakoih3ix"]
 
 [ext_resource type="Script" uid="uid://cc0vdpaoscl2w" path="res://Scenes/canvas_layer.gd" id="1_7l8sf"]
 [ext_resource type="Texture2D" uid="uid://cudpouu8ldmil" path="res://BGS/2 Background/Day/1.png" id="1_s8j3d"]
@@ -30,6 +30,16 @@
 [ext_resource type="FontFile" uid="uid://crryr6k86xxkm" path="res://kenvector_future.ttf" id="27_5mvkg"]
 [ext_resource type="PackedScene" uid="uid://r8ov4ynfsv31" path="res://Scenes/show_player.tscn" id="29_8o443"]
 [ext_resource type="Script" uid="uid://dldvmh8rty1md" path="res://Scenes/button.gd" id="29_e8p47"]
+[ext_resource type="Shader" uid="uid://cwxt0e6o1xffh" path="res://Scenes/canvas_layer.gdshader" id="31_6yed8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqmlr"]
+shader = ExtResource("31_6yed8")
+shader_parameter/height = 10.0
+shader_parameter/frequency = 5.0
+shader_parameter/speed = 5.0
+
+[sub_resource type="Theme" id="Theme_g76wj"]
+default_font = ExtResource("27_5mvkg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0rjc"]
 texture = ExtResource("6_wqmlr")
@@ -576,6 +586,35 @@ default_font = ExtResource("27_5mvkg")
 
 [node name="start" type="CanvasLayer"]
 script = ExtResource("1_7l8sf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.272
+offset_bottom = -0.256012
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.8
+anchor_bottom = 5.2
+offset_bottom = -8.00002
+color = Color(1, 1, 1, 0.0156863)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.091
+offset_bottom = 7.98398
+
+[node name="Label" type="Label" parent="Control/CenterContainer"]
+material = SubResource("ShaderMaterial_wqmlr")
+use_parent_material = true
+layout_mode = 2
+theme = SubResource("Theme_g76wj")
+theme_override_font_sizes/font_size = 70
+text = "CHIPCHAP"
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

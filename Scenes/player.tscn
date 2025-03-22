@@ -866,5 +866,6 @@ damage_repeat = true
 metadata/_custom_type_script = "uid://cov0yppfp6vgb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
+visible = false
 position = Vector2(79, 19)
 shape = SubResource("RectangleShape2D_ljkmv")

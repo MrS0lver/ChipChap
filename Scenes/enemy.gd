@@ -61,4 +61,5 @@ func _attack_exit_state() -> void:
 	attack_timer.start()
 
 func _despawn():
-	queue_free()
+	pass
+	#queue_free()
