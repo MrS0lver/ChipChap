@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://li2vtc4jfpf"]
+[gd_scene load_steps=28 format=3 uid="uid://li2vtc4jfpf"]
 
 [ext_resource type="Texture2D" uid="uid://dwqvndutb1w5f" path="res://Assets/Moon/Moon BG (1)/1.png" id="1_vwg62"]
 [ext_resource type="Texture2D" uid="uid://cqcmff1sisskd" path="res://BGS/Tileset.png" id="2_76ybr"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://clum3py5yof8s" path="res://Assets/Trees/5.png" id="9_jtv8s"]
 [ext_resource type="Texture2D" uid="uid://c2gnsreuagddu" path="res://Assets/Pointer1.png" id="10_c81s1"]
 [ext_resource type="PackedScene" uid="uid://bg2d7eprkkmva" path="res://Scenes/buttons.tscn" id="13_n4vm5"]
+[ext_resource type="Script" uid="uid://c53dsmn11ddbs" path="res://Commponents/in_game_pop_up.gd" id="14_fxnjf"]
+[ext_resource type="FontFile" uid="uid://crryr6k86xxkm" path="res://kenvector_future.ttf" id="15_xjeco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwg62"]
 texture = ExtResource("2_76ybr")
@@ -667,6 +669,9 @@ texture_region_size = Vector2i(14, 42)
 sources/0 = SubResource("TileSetAtlasSource_qf6rc")
 sources/1 = SubResource("TileSetAtlasSource_n4vm5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjeco"]
+size = Vector2(48, 42)
+
 [node name="LEVEL_3" type="Node2D"]
 
 [node name="BG" type="ParallaxBackground" parent="."]
@@ -722,3 +727,34 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Buttons" parent="Control" instance=ExtResource("13_n4vm5")]
+
+[node name="InGamePopUp" type="Area2D" parent="."]
+position = Vector2(2088, -192)
+collision_mask = 2
+script = ExtResource("14_fxnjf")
+text = " hellow lonely 
+ traveller
+ how are you
+"
+trigger_group = "Player"
+metadata/_custom_type_script = "uid://c53dsmn11ddbs"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InGamePopUp"]
+offset_left = -48.0
+offset_top = -72.0
+offset_right = 120.0
+offset_bottom = -18.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("15_xjeco")
+bbcode_enabled = true
+text = " hellow lonely 
+ traveller
+ how are you
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InGamePopUp"]
+position = Vector2(-24, 8)
+shape = SubResource("RectangleShape2D_xjeco")
