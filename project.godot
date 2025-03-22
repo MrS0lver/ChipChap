@@ -32,6 +32,10 @@ folder_colors={
 "res://testing/": "gray"
 }
 
+[global_group]
+
+Player=""
+
 [input]
 
 Slide={
