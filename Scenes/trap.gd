@@ -1,8 +1,8 @@
 extends Node2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	$CollisionShape2D/AnimationPlayer.play("Chage pos")
-	$"Moving Animated".play("default")
+	animation_player.play("Chage pos")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Colliding")
