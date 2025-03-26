@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmcxk"]
-size = Vector2(179, 116)
+size = Vector2(128.75, 89)
 
 [sub_resource type="Animation" id="Animation_xmcxk"]
 resource_name = "Chage pos"
@@ -109,13 +109,16 @@ _data = {
 }
 
 [node name="Trap" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_xmcxk")
 
 [node name="Moving Animated" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 2)
-scale = Vector2(5.57617, 5.18994)
+position = Vector2(-19.1094, -19.039)
+scale = Vector2(4.44433, 4.53247)
 sprite_frames = SubResource("SpriteFrames_d1eiu")
-frame_progress = 0.0855782
+frame = 4
+frame_progress = 0.479799
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -55)
@@ -125,3 +128,4 @@ shape = SubResource("RectangleShape2D_xmcxk")
 libraries = {
 &"": SubResource("AnimationLibrary_utgws")
 }
+speed_scale = 0.5

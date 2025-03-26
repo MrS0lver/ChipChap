@@ -639,4 +639,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Buttons" parent="Control" instance=ExtResource("12_1ossp")]
-visible = false
