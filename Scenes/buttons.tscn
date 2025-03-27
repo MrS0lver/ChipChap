@@ -33,7 +33,7 @@ texture_normal = ExtResource("4_w76ou")
 action = "Slide"
 
 [node name="Menu" type="TouchScreenButton" parent="."]
-position = Vector2(1064, 24)
-scale = Vector2(0.274014, 0.244021)
+position = Vector2(1039, 7)
+scale = Vector2(0.393062, 0.324973)
 texture_normal = ExtResource("4_5cs7i")
 action = "Menu"

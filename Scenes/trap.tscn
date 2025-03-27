@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cspgwqh0cxws" path="res://Scenes/trap.gd" id="1_xmcxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmcxk"]
-size = Vector2(128.75, 89)
+size = Vector2(117.375, 89)
 
 [sub_resource type="Animation" id="Animation_xmcxk"]
 resource_name = "Chage pos"
@@ -72,7 +72,8 @@ collision_mask = 2
 script = ExtResource("1_xmcxk")
 
 [node name="Moving Animated" type="Sprite2D" parent="."]
-scale = Vector2(4.44433, 4.53247)
+position = Vector2(-4.05464, 0)
+scale = Vector2(4.19092, 4.53247)
 texture = ExtResource("1_0juii")
 offset = Vector2(0, -32)
 hframes = 8

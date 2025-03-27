@@ -66,8 +66,9 @@ func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("Menu"):
 		#menu.instantiate()
 	if Input.is_action_just_pressed("Menu"):
-		pass
-	
+		print("Pressed")
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+		
 	# Reset position if falling out of bounds
 	if position.y >= 670:
 		position = spawn_pos

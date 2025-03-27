@@ -42,6 +42,6 @@ theme_override_font_sizes/font_size = 38
 text = "Restart"
 
 [node name="Close_Menu" type="TouchScreenButton" parent="."]
-position = Vector2(1027, 31)
-scale = Vector2(0.471429, 0.352381)
+position = Vector2(1023, 16)
+scale = Vector2(0.490476, 0.42381)
 texture_normal = ExtResource("3_4iqyv")
