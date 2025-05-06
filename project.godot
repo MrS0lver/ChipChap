@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="ChipChap"
-run/main_scene="uid://bs7ymakoih3ix"
+run/main_scene="uid://li2vtc4jfpf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 MusicMenager="*res://autoloads/music_menager.tscn"
+Settings="*res://Global/Settings.gd"
+Fps="*res://FPS.tscn"
 
 [display]
 

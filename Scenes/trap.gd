@@ -4,7 +4,7 @@ extends Node2D
 func _ready() -> void:
 	animation_player.play("Chage pos")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("Colliding")
 	
 	

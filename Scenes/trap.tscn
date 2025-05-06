@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cspgwqh0cxws" path="res://Scenes/trap.gd" id="1_xmcxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmcxk"]
-size = Vector2(117.375, 89)
+size = Vector2(124.688, 89)
 
 [sub_resource type="Animation" id="Animation_xmcxk"]
 resource_name = "Chage pos"

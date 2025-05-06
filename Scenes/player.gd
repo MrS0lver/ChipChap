@@ -33,6 +33,10 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	print(Engine.get_frames_per_second())
+	# FPS is VISIBLE for NOW NOT IN NODE BUT IN CONSOLE 
+	
+	
 	# Apply gravity
 	if not is_on_floor():
 		velocity += (get_gravity() * delta)

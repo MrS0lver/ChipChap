@@ -632,10 +632,4 @@ metadata/_edit_lock_ = true
 
 [node name="TRANS" parent="." instance=ExtResource("19_yxm7g")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Buttons" parent="Control" instance=ExtResource("12_1ossp")]
+[node name="Buttons" parent="." instance=ExtResource("12_1ossp")]

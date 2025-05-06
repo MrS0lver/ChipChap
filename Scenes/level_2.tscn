@@ -710,6 +710,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Buttons" parent="Control" instance=ExtResource("8_47ed3")]
+layout_mode = 1
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
 
@@ -854,8 +855,8 @@ position = Vector2(5945, 582)
 curve = SubResource("Curve2D_4k5rq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2(5945, 582)
-progress = 0.000488281
+position = Vector2(5944, 583)
+progress = 775.001
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Path2D/PathFollow2D"]
